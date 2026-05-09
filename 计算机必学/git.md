@@ -51,6 +51,12 @@ git commit -m "feat: 初始化项目 - AI 渗透测试 Agent 原型"
 ```
 `git add .` 会将所有新增和修改过的文件放入暂存区，`git commit` 则将这些快照记录为一次版本。
 
+### 删除缓存区中的内容，不提交
+
+`git rm --cached -r <file1> <file2>`
+
+这些文件会显示未被跟踪，后续push也不会被传到远程仓库
+
 ---
 
 ## 4. 关联 GitHub 远程仓库并推送
@@ -62,16 +68,20 @@ git commit -m "feat: 初始化项目 - AI 渗透测试 Agent 原型"
 4. 点击 `Create repository`。
 
 ### 4.2 关联远程仓库
+
 复制创建后页面上显示的 HTTPS 地址（例如 `https://github.com/meantrick11/llm-sec-lab.git`），在本地执行：
 ```bash
 git remote add origin https://github.com/你的用户名/你的仓库名.git
 ```
 `origin` 是远程仓库的默认别名，指向你刚刚创建的 GitHub 仓库。
 
+使用`git remote -v`查看是否关联成功
+
 ### 4.3 推送代码
+
 ```bash
 git branch -M main         # 将当前分支重命名为 main
-git push -u origin main    # 推送 main 分支到远程仓库，并设置上游跟踪
+git push -u origin(仓库url) main(branch_name)    # 推送 main 分支到远程仓库，并设置上游跟踪
 ```
 
 ---
@@ -91,6 +101,10 @@ git push -u origin main    # 推送 main 分支到远程仓库，并设置上游
 8. **立即复制**生成的 Token（类似 `ghp_xxxxxxxxxxxxxxxxxxxx`）！这个 Token **只会显示一次**，关闭页面后无法再查看。
 
 ### 5.2 在终端中使用 Token
+
+*这里如果电脑已经有github的凭证信息了，那么push的时候会携带上你的账户的相关信息，然后github会检验权限问题(是否是authentic，contributor？)，如果不是，会返回403错误(没有权限)；如果你电脑上没有相关github的账户凭证信息，那么github验证的时候会返回401，要求你输入对应的用户名以及token信息*
+*如果你有对应的token，那么可以直接在使用`git push https://username:token@github.com/... branch_name`的命令附上一次性token实现无权限但有对应token的推送*
+
 当推送时提示：
 ```
 Username for 'https://github.com': 你的用户名
@@ -102,6 +116,21 @@ Password for 'https://username@github.com':
 成功后，代码会被推送到 GitHub，下次在同一台机器上再次推送通常无需重新输入（凭据会被缓存）。
 
 ---
+
+## 6.远程拉取问题
+
+*分支就是最初的文件版本的副本，你可以创建不同的分支进行开发，各个分支互不影响，所以很推荐一个分支用于开发、另一个用于测试等等，完成更改之后使用merge进行分支的合并*
+
+`git pull origin(reposity_url)  main(branch_name)`这条命令会拉取远程仓库的main分支到本地仓库，且直接与本地合并，但可能会出现报错问题
+
+`git fetch origin(reposity_url) main(branch_name)`这条命令将远程仓库的main分支上的新的提交拉取到本地，更新本地远程跟踪分支`origin/main`指针到远程main的最新位置，但不合并到本地的main分支,这是和`pull`命令最明显的区别
+
+`git log origin/master..master --oneline`
+查看本地有但远程没有的提交（即本地超前于远程）
+
+`git log master..origin/master --oneline`查看远程有但本地没有的提交（即远程超前于本地）的差异
+
+`git merge origin/main`，这时，你需要切换分分支到对应的main分支上，表示将origin/main（目标分支）合并到当前分支上，所以最好切到对应的main分支上**这里的origin/main**对应的是从远程仓库对应分支拷贝下来的快照，还是在本地文件中（远程跟踪分支），然后使用merge将本地分支main和origin/main对其
 
 ## 6. 常见错误与解决
 
@@ -141,9 +170,12 @@ git push -u origin main
 
 ---
 
+
 ## 8. 额外小贴士
 
 - 定期执行 `git status` 查看文件状态。
 - 使用 `git log --oneline` 查看简洁的提交历史。
+- 使用`git branch -d branch_name`删除对应的分支，最好是在已经合并之后在删除
+- 使用`git checkout -b branch_name`创建新的分支，并使用`git checkout branch_name`切换到对应的分支上
 - 如果不想每次都输入 Token，可以配置 `git config --global credential.helper store`（不推荐在不安全的机器上使用），或使用 SSH 方式免密。
 - 永远不要将 Token 或 `.env` 提交到仓库中！
