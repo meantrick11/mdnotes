@@ -1,4 +1,4 @@
-这是一份为你整理的 **Git 基础与 GitHub Token 使用笔记**，涵盖了从初始化项目到安全推送代码的全过程，可直接作为 Markdown 文件保存学习。
+git learning notes
 
 ```markdown
 # 🐙 Git 基础与 GitHub 个人访问令牌 (Token) 使用笔记
