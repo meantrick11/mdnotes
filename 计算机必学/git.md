@@ -1,4 +1,4 @@
-git learning notes
+# GIT LEARNING NOTES
 
 ```markdown
 # 🐙 Git 基础与 GitHub 个人访问令牌 (Token) 使用笔记
