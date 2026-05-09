@@ -1,0 +1,10 @@
+#IDE配置
+.idea/
+.vscode/
+
+# Python缓存
+__pycache__/
+*.pyc
+
+# 私人文件
+secretkey.md
