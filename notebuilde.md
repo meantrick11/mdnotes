@@ -187,3 +187,14 @@ claude
 ---
 
 教程至此结束，以后随时可以按此文档恢复环境或介绍给他人。祝使用愉快！
+
+---
+
+## 相关笔记
+
+- [[aiagentbuid/claw/claudecode的使用|Claude Code 使用笔记]]
+- [[aiagentbuid/claw/openclawwindows11|OpenClaw Windows 11]]
+- [[secretkey|密钥与账号信息]]
+- [[aiagentbuid/agnet技术栈/bilicourse/agent应用开发指南|Agent 应用开发指南]]
+- [[常用工具/git|Git 常用命令]]
+- [[常用工具/docker|Docker 笔记]]

@@ -1,5 +1,7 @@
 # python 进阶学习（针对于agent build
 
+> **相关笔记**: [[bilicourse/agent应用开发指南|Agent开发]] | [[bilicourse/Langchain|Langchain]]
+
 ## day one
 
 ### 多线程（asyncio库）

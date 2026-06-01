@@ -1,4 +1,6 @@
 # binwalk 命令详解（Kali 固件分析神器）
+
+> **相关笔记**: [[../../虚拟机/kali安装|Kali安装]] | [[../信息收集/nmap|Nmap]] | [[../../计算机通用/linux/orders|Linux命令]] | [[../webshell|Webshell]]
 ## 作用
 **binwalk**：二进制固件解析、分离、提取工具
 专门拆 **固件包、压缩包、镜像、内嵌文件、加密分区**

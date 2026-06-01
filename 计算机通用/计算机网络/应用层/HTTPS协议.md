@@ -4,6 +4,8 @@ HTTPS（HyperText Transfer Protocol Secure，安全超文本传输协议）是 H
 
 HTTPS 广泛用于保护敏感信息（如登录凭证、支付信息）的传输。
 
+> **相关笔记**: [[HTTP协议|HTTP]] | [[ssh协议|SSH]] | [[../传输层/TCP|TCP]] | [[../../../../网安/2026Web安全专项集训/集训笔记1|Web协议解析]]
+
 ---
 
 # HTTPS 的工作原理

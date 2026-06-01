@@ -1,0 +1,51 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": true,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "path:网安",
+      "color": {
+        "a": 1,
+        "rgb": 16739179
+      }
+    },
+    {
+      "query": "path:计算机通用",
+      "color": {
+        "a": 1,
+        "rgb": 3725737
+      }
+    },
+    {
+      "query": "path:aiagentbuid",
+      "color": {
+        "a": 1,
+        "rgb": 5090295
+      }
+    },
+    {
+      "query": "path:读书有感",
+      "color": {
+        "a": 1,
+        "rgb": 11384253
+      }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": false,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 0.48315654042847944,
+  "close": true
+}

@@ -1,5 +1,7 @@
 # curl 命令
 
+> **相关笔记**: [[../../../../计算机通用/计算机网络/应用层/HTTP协议|HTTP协议]] | [[../../常用服务类型/protocols|常见服务端口]]
+
 ## 简介
 
 curl  is **a tool for transferring data from or to a server using URLs.**

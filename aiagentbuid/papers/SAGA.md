@@ -1,5 +1,7 @@
 # SAGA：A Security Architecture for Governing AI Agentic Systems
 
+> **相关笔记**: [[AgentAI|AgentAI论文]] | [[双向防火墙|双向防火墙]] | [[../agnet技术栈/bilicourse/agent应用开发指南|Agent开发]]
+
 这篇论文 **《SAGA: A Security Architecture for Governing AI Agentic Systems》** 提出了一个用于治理AI智能体系统的安全架构。以下是对其核心内容的总结。
 
 ### 一、讲了什么问题？（背景与痛点）

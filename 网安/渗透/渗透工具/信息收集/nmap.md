@@ -1,5 +1,7 @@
 # nmap 教程
 
+> **相关笔记**: [[netdiscover|Netdiscover]] | [[../wfuzz子域名|Wfuzz子域名]] | [[../目录扫描|目录扫描]] | [[../ping命令|Ping命令]] | [[../../../渗透基础/思想篇|渗透基础]] | [[../../../../计算机通用/linux/渗透命令|Linux渗透命令]]
+
 ## Nmap (Network Mapper)
 Nmap（Network Mapper）是一款用于网络发现和安全审计的开源工具。它最初由 Gordon Lyon（也被称为 Fyodor Vaskovich）开发，是一款功能强大且广泛使用的网络扫描工具。Nmap 允许用户在网络上执行主机发现、端口扫描、服务识别和版本检测等操作，以帮助评估网络的安全性、发现主机和服务、以及识别潜在的安全威胁。
 

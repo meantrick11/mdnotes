@@ -1,3 +1,5 @@
+> **相关笔记**: [[agnet技术栈/bilicourse/agent应用开发指南|Agent开发]] | [[papers/AgentAI|AgentAI论文]] | [[papers/SAGA|SAGA论文]]
+
 你的任务是什么？
 │
 ├─ 1. 监督学习（有标签 y）

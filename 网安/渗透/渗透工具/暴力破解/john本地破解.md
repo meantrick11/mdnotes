@@ -1,5 +1,7 @@
 # john的使用
 
+> **相关笔记**: [[hydra|Hydra网络破解]] | [[crunch生成字典|Crunch字典生成]] | [[../../../../靶场/DVWA/BruteForce|DVWA暴力破解]] | [[../../../../CTF/常用工具/暴力破解/john本地破解|CTF-John]]
+
 ## 简介
 
 john是用来本地暴力破解的工具，用来对比wordlist中的密码是否能够暴力破解对应目标

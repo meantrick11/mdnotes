@@ -1,5 +1,7 @@
 # crunch
 
+> **相关笔记**: [[hydra|Hydra]] | [[john本地破解|John]] | [[../../../../靶场/DVWA/BruteForce|DVWA暴力破解]] | [[../../../../CTF/常用工具/暴力破解/crunch生成字典|CTF-Crunch]]
+
 `crunch` 是 Kali Linux 自带的**密码字典生成工具**，用来按长度、字符集、模式生成所有可能的字符串组合，常用于爆破密码。
 
 ---

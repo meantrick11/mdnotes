@@ -1,5 +1,7 @@
 # agent开发指南
 
+> **相关笔记**: [[agent研发过程|Agent研发过程]] | [[第一节课|第一节课]] | [[Langchain|Langchain]] | [[../../../claw/claudecode的使用|Claude Code使用]] | [[../../../claw/openclawwindows11|OpenClaw]] | [[../../../MLnote|ML笔记]] | [[../../../papers/AgentAI|AgentAI论文]] | [[../../../papers/SAGA|SAGA论文]] | [[../../pythonhigh|Python高级]]
+
 ### AI Agent 是什么？
 
 AI Agent（人工智能代理）是一个能够自主行动的软件程序，通过感知环境、收集数据、并基于这些数据来执行自我决定的任务，以实现预定目标。**LLMs（大模型）** 是现代AI代理的核心，因为它们提供了最关键的推理层，并且可以方便地衡量性能。其关键特点包括**自主性、交互能力、学习能力和多模态支持**。

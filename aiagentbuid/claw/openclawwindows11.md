@@ -1,5 +1,7 @@
 # windows 11 openclaw agent build guide
 
+> **相关笔记**: [[claudecode的使用|Claude Code使用]] | [[../../notebuilde|Claude Code配置教程]]
+
 1. 步骤一：管理员身份运行powershell
 > 1. 点击开始按钮
 > 2. 在搜索栏输入powershell

@@ -1,5 +1,7 @@
 # JavaSctipt 输出
 
+> **相关笔记**: [[../../网安/靶场/DVWA/XSSreflected|XSS]] | [[../../网安/靶场/DVWA/XSSDOM|DOM XSS]] | [[../PHP/phplearn|PHP]] | [[../pynote/import|Python]]
+
 **window.alert()**: 弹出警告框
 **document.write()**:将内容写到HTML文档中
 **innerHTML**:写入到HTML元素中

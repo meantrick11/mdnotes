@@ -3,6 +3,8 @@
 POP3（Post Office Protocol version 3，邮局协议第3版）是一种用于从邮件服务器下载电子邮件的协议。
 POP3 允许用户通过客户端（如 Outlook、Thunderbird）从服务器获取邮件，并将邮件存储到本地设备。
 
+> **相关笔记**: [[SMTP协议|SMTP]] | [[../传输层/TCP|TCP]] | [[../../../../网安/渗透/常用服务类型/protocols|常见服务端口]]
+
 ---
 
 # POP3 的工作原理
