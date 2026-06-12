@@ -9,8 +9,8 @@
 ### 🤖 Agent（智能体）
 这正是 `RedTeam-Agent` 的核心概念。
 
--   **是什么**：能自主理解目标、规划步骤、调用工具并循环执行直到完成任务的 AI 程序。它就像一个有手有脑的数字人。
--   **结合项目**：你本地打开的 Cursor + Skill 文件，整体上就是一个**红队 Agent**。它不只是聊天，而是会真的去操作工具。
+-   **是什么**：'An Agent is a system that leverages an AI model to interact with its environment in order to achieve a user-defined objective. It combines reasoning, planning, and the execution of actions (often via external tools) to fulfill tasks.'
+
 
 ### 🔌 MCP (Model Context Protocol，模型上下文协议)
 这个在项目介绍中直接提到过。
