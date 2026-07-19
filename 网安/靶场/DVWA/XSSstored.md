@@ -1,7 +1,5 @@
 # XSS stored 
 
-> **相关笔记**: [[学习路径|DVWA学习路径]] | [[XSSreflected|反射型XSS]] | [[XSSDOM|DOM型XSS]] | [[Fileupload|文件上传]] | [[CSRF|CSRF]] | [[../../计算机通用/languages/JavaScript/javaScript|JavaScript]]
-
 ## 一、XSS(stored)类型简介
 
 存储型XSS（Stored XSS）是一种常见的Web安全漏洞，**攻击者将恶意代码注入到Web应用程序中，并将其存储在服务器端。当其他用户访问这些页面时，嵌入的恶意代码会被执行，从而导致攻击**。

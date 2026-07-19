@@ -6,9 +6,7 @@
 ### DOM型XSS攻击概述
 
 DOM型XSS（DOM-based Cross-Site Scripting，DOM XSS）是一种跨站脚本攻击（XSS）的变种，它与传统的反射型XSS（Reflected XSS）或存储型XSS（Stored XSS）有所不同，主要是发生在客户端（浏览器端），并且依赖于网页中动态的文档对象模型（DOM）结构。
-————————————————
-版权声明：本文为CSDN博主「freesec」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/zhongyuekang820/article/details/144131127
+
 
 ### 什么是DOM
 
@@ -26,15 +24,16 @@ DOM是文档的“表示层”，将HTML或XML文档映射成一个树形结构�
 属性节点（Attribute）：表示HTML元素的属性，如href、class、id等。
 注释节点（Comment）：表示HTML或XML文档中的注释。
 例如，考虑如下的HTML片段：
-
+```html
 <html>
   <body>
     <h1>Welcome to my website</h1>
     <p>This is a paragraph of text.</p>
   </body>
 </html>
+```
 
-这个文档会被表示为一个DOM树，根节点是<html>元素，下面是<body>元素，再下面有<h1>和<p>元素，而<h1>和<p>元素的文本内容则分别是"Welcome to my website"和"This is a paragraph of text"。
+这个文档会被表示为一个DOM树，根节点是<\html>元素，下面是<\body>元素，再下面有<\h1>和<\p>元素，而<\h1>和<\p>元素的文本内容则分别是"Welcome to my website"和"This is a paragraph of text"。
 
 2. DOM树结构示例
 
