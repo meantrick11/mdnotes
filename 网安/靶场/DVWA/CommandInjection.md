@@ -1,7 +1,5 @@
 # Command Injection
 
-> **相关笔记**: [[学习路径|DVWA学习路径]] | [[../渗透/渗透基础/思想篇|渗透基础]] | [[../../计算机通用/linux/orders|Linux命令]] | [[../../计算机通用/linux/渗透命令|渗透命令]] | [[Fileupload|文件上传]] | [[webshell|Webshell工具]]
-
 ## 一、命令注入简介
 
 命令注入是一种攻击方式，攻击者**旨在通过存在漏洞的应用程序，在宿主操作系统上执行任意指令**。当应用程序将未经过滤的用户可控数据（表单、Cookie、HTTP 请求头 等）传入系统 Shell 时，就会产生命令注入漏洞。在该攻击中，攻击者构造的操作系统命令，通常会以漏洞应用程序的权限被执行。命令注入攻击的根源，主要在于输入校验不充分。
@@ -128,10 +126,8 @@ low级别直接获取POST表单中的ip参数，并直接执行ping命令，没�
 
 读者可以尝试上面的payload，一下分别展示`127.0.0.1; whoami`、`127.0.0.1; cat /etc/passwd`(/etc/passwd 是 Linux/Unix 系统中核心的用户账户信息文件、格式为用户名:密码占位符:UID:GID:用户注释信息:主目录:登录Shell)：
 
-![lowre](./CommandInjection/lowre1.png
-)
-![lowre](./CommandInjection/lowre2.png
-)
+![lowre](./CommandInjection/lowre1.png)
+![lowre](./CommandInjection/lowre2.png)
 
 ### DVWA中的Command Injection medium 级别
 

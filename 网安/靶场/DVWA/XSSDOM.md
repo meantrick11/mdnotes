@@ -1,6 +1,5 @@
 # XSS（跨站脚本）
 
-> **相关笔记**: [[学习路径|DVWA学习路径]] | [[XSSreflected|反射型XSS]] | [[XSSstored|存储型XSS]] | [[../../计算机通用/languages/JavaScript/javaScript|JavaScript]] | [[../../2026Web安全专项集训/集训笔记1|URL与DOM解析]]
 
 ## 一、什么是XSS(DOM)
 ### DOM型XSS攻击概述
@@ -84,7 +83,8 @@ document.getElementById("myButton").addEventListener("click", function() {
 
 渲染过程：当浏览器解析HTML时，它会生成DOM树，并结合CSS样式规则来计算每个元素的位置、大小等布局信息。这一过程通常被称为“渲染”。
 动态更新：通过JavaScript操作DOM后，浏览器会重新计算页面的样式、布局，可能会导致页面的重新渲染。这也解释了为什么修改DOM的操作通常会影响页面的显示效果，甚至可能导致性能问题。
-三、DOM型XSS的工作原理
+
+### DOM型XSS的工作原理
 
 DOM型XSS与其他类型的XSS的区别在于，攻击发生的地方不是服务器端，而是客户端的浏览器。具体来说，攻击者利用网页中的客户端JavaScript代码，注入恶意脚本并执行。这通常依赖于某些网页上不安全地使用DOM API（如document.write()、innerHTML、eval()等）来动态生成和插入内容，或者是使用不当的JavaScript事件处理（如onmouseover、onclick等）。
 
@@ -167,13 +167,13 @@ http://example.com/?input=<script>alert('XSS')</script>
 ### XSS(DOM) low 级别
 
 **源码**：
-`php
+```php
 <?php
 
 # No protections, anything goes
 
 ?>
-`
+```
 
 **原理说明**：由于XSS(DOM)的攻击方式比较特殊，是存在于前端的漏洞，所以需要我们查看页面源代码，找到可能的注入点，常见的可能诸如点有：
 >- document.URL / document.documentURI / location.href
@@ -340,7 +340,7 @@ String.fromCharCode(60, 115, 99, 114, 105, 112, 116, 62)
 
 10. 使用#对后端过滤恶意语句的机制进行绕过
 
-# 号在 URL中的代表网页中的一个位置（ url 中 # 后面的字符串是该位置的标识符）。使用#意味着其后面的语句不会被请求提交到服务端执行，但是#后面的javascript攻击是事实纯在的并且插入了前端页面中的
+#号在 URL中的代表网页中的一个位置（ url 中 # 后面的字符串是该位置的标识符）。使用#意味着其后面的语句不会被请求提交到服务端执行，但是#后面的javascript攻击是事实纯在的并且插入了前端页面中的
 payload：
 
 http://127.0.0.1/DVWA-master/vulnerabilities/xss_d/index.php#?default=English<script>alert(document.cookie)</script>

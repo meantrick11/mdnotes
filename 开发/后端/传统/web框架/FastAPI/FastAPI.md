@@ -34,6 +34,31 @@ pip install fastapi[standard]
 uv add fastapi[standard]
 ```
 
+## 数据来源
+
+首先我们需要熟悉HTTP请求，一个HTTP请求包含请求行、请求头，请求体，其中FastAPI的数据来源一定来自于此，FastAPI获取的路径参数和查询参数通过Path()和Query()直接从请求行中读取，请求头中的数据通过Heder()、Cookie()获取，然通过POST\PUT\PATCH发送的数据需要通过Body(),Form(),File()等参数进行获取。
+
+**其次，FastAPI自动判断是否是路径参数？是否是请求体参数？是否是查询参数？**
 
 
+## 执行逻辑
 
+客户端请求
+  ↓
+ASGI 服务器 (Uvicorn)
+  ↓
+① 中间件栈（由外向内，逐层进入）
+  ↓
+② 最内层应用（Starlette / FastAPI 的核心）
+  ↓
+③ 路由匹配（在 Router/APIRouter 中查找对应的 APIRoute）
+  ↓
+④ 路由级约束（路径参数提取、依赖注入、请求体验证等）
+  ↓
+⑤ 调用具体的路径操作函数（你的 async def 端点）
+  ↓
+⑥ 响应处理（response_model 验证、序列化）
+  ↓
+⑦ 响应原路返回，经过中间件栈（由内向外，逐层出去）
+  ↓
+客户端收到响应

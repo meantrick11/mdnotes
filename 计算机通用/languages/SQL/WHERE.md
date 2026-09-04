@@ -8,32 +8,34 @@ SELECT column,anthor_column FROM MYTABLE WHERE condiction AND/OR another_conditi
 
 SELECT * FORM MYTABLE WHERE condition;
 
-## 判断语句
 
-### 大于小于(不)等于
+## 判断语句
+### 数值
+#### 大于小于(不)等于
 
 col_name != 4
 
-### BETWEEN ... AND...
+#### BETWEEN ... AND...
 
 col_name BETWEEN 1.5 AND 6
 
-### NOT BETWEEN ... AND ...
+#### NOT BETWEEN ... AND ...
 
 col_name NOT BETWEEN 1 AND 5
 
-### IN(...)
+#### IN(...)
 
 col_name IN (1,2,3)
 
-### NOT IN(...)
+#### NOT IN(...)
 
 col_name NOT IN (4,5,6)
 
 ### LIMIT
 限制前多少条？
 LIMIT 5
-# SQL 字符串条件运算符（中文翻译）
+### SQL 字符串条件运算符
+
 | 运算符 | 含义（中文） | 示例 |
 | -------- | --------- | ------- |
 | = | 区分大小写的精确字符串匹配 | col_name = "abc" |

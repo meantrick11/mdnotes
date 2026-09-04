@@ -1,13 +1,5 @@
 # python 进阶学习（针对于agent build
-
-> **相关笔记**: [[bilicourse/agent应用开发指南|Agent开发]] | [[bilicourse/Langchain|Langchain]]
-
 ## day one
-
-### 多线程（asyncio库）
-
-好的，补充上 `async for` 和 `async with`，并对所有常用函数/关键字逐个解释。
-
 ---
 
 ### 一、关键字
