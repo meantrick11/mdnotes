@@ -13,26 +13,170 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "aiagentbuid/claw/openclawwindows11.md",
+                "file": "开发/后端/agnet技术栈/框架/haystack侧重RAG/和lang系列的不同.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "openclawwindows11"
+              "title": "和lang系列的不同"
+            }
+          },
+          {
+            "id": "423af92dacaab22b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "开发/后端/agnet技术栈/框架/haystack侧重RAG/核心概念/DocumentStores/19DocumentStore.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "19DocumentStore"
+            }
+          },
+          {
+            "id": "e3fdf721de44d5c1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "开发/后端/agnet技术栈/框架/haystack侧重RAG/核心概念/DocumentStores/20选择文档存储.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "20选择文档存储"
+            }
+          },
+          {
+            "id": "ee1c449295df1db7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "21自定义DocumentStore.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "21自定义DocumentStore"
+            }
+          },
+          {
+            "id": "3505d116922dd356",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "开发/后端/传统/开发常用功能框架/定时任务/java/Quartz/Quartz简介.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Quartz简介"
             }
           },
           {
             "id": "ea9bbba400dd97c9",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "关系图谱"
+              "type": "markdown",
+              "state": {
+                "file": "开发/后端/agnet技术栈/框架/lang系列/deepagent/2create_deep_agent.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2create_deep_agent"
+            }
+          },
+          {
+            "id": "c058b2ec6b27d7c7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "开发/后端/agnet技术栈/框架/haystack侧重RAG/核心概念/DataClasses/DataClasses.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "DataClasses"
+            }
+          },
+          {
+            "id": "c4f7968d142577ba",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "开发/后端/agnet技术栈/框架/lang系列/langgraph/图编排compile.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "图编排compile"
+            }
+          },
+          {
+            "id": "24ebde84b4f3465a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "开发/后端/agnet技术栈/框架/haystack侧重RAG/核心概念/DataClasses/16ChatMessage.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "16ChatMessage"
+            }
+          },
+          {
+            "id": "24b951969a965004",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "开发/后端/agnet技术栈/框架/haystack侧重RAG/核心概念/DataClasses/17. FileContent.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "17. FileContent"
+            }
+          },
+          {
+            "id": "ddf3ea2effcb86f2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "开发/后端/agnet技术栈/框架/haystack侧重RAG/核心概念/DataClasses/17. FileContent.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "17. FileContent"
+            }
+          },
+          {
+            "id": "f88f8ee11d69020b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2026-10-10.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2026-10-10"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -52,7 +196,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -89,7 +235,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 515.5
   },
   "right": {
     "id": "2bfa3e04cb0d646c",
@@ -196,35 +342,51 @@
   },
   "active": "f082312b391df2dd",
   "lastOpenFiles": [
-    "计算机通用/计算机组成/计算机组成.md",
-    "计算机通用/常用工具/常用工具.md",
-    "计算机通用/常用工具/常用工具.md.tmp.30164.1779870649812",
-    "计算机通用/linux/linux.md",
-    "计算机通用/languages/languages.md",
-    "计算机通用/刷题思路/刷题思路.md",
-    "计算机通用/数据结构/数据结构.md",
-    "计算机通用/计算机网络/计算机网络.md",
-    "网安/虚拟机/虚拟机.md",
-    "网安/漏洞收集/漏洞收集.md",
-    "网安/CTF/CTF.md",
-    "网安/渗透/渗透.md",
-    "网安/靶场/靶场.md",
-    "读书有感/读书有感.md",
-    "aiagentbuid/aiagentbuid.md",
-    "计算机通用/计算机通用.md",
-    "网安/网安.md",
-    "README.md.tmp.30164.1779870535704",
-    "计算机通用/计算机组成/第二章数的表示/第二章数据表示.md",
-    "计算机通用/计算机组成/第一章机器数概述/第一章.md",
-    "aiagentbuid/热门ai词汇.md",
-    "aiagentbuid/MLnote.md",
-    "网安/靶场/DVWA/学习路径.md",
-    "README.md",
-    "计算机通用/计算机网络/应用层/HTTP协议.md",
-    "aiagentbuid/agnet技术栈/bilicourse/agent应用开发指南.md",
-    "aiagentbuid/papers/SAGA.md.tmp.30164.1779867498905",
-    "网安/2026Web安全专项集训/集训笔记1.md.tmp.30164.1779861002163",
-    "aiagentbuid/claw/claudecode的使用.md",
-    "aiagentbuid/claw/openclawwindows11.md"
+    "开发/后端/传统/分布式/雪花id.md",
+    "开发/后端/传统/开发常用功能框架/定时任务/java/Quartz/Quartz简介.md",
+    "开发/后端/传统/开发常用功能框架/定时任务/java/Quartz",
+    "开发/后端/传统/开发常用功能框架/定时任务/java",
+    "开发/后端/传统/开发常用功能框架/定时任务",
+    "开发/后端/传统/开发常用功能框架",
+    "开发/后端/传统/数据存储/存储体系全景图.md",
+    "工作/工程经验/数据库单表+TEXTJOSN存储.md",
+    "工作/工程经验/SQL语句不直接由模型生成的原因.md",
+    "工作/工程经验",
+    "工作/工作经验/0至上而下的万金油.md",
+    "工作/工作经验/0项目理解&代码拆解万金油.md",
+    "开发/后端/传统/WEB框架/Spring/实例注册原理.md",
+    "开发/后端/传统/WEB框架/Spring",
+    "开发/后端/传统/数据存储/存储基础设施及原理",
+    "开发/后端/传统/数据存储/数据库/关系型数据库/schema.md",
+    "开发/后端/传统/数据存储/块存储/iSCSI",
+    "开发/后端/传统/数据存储/块存储/AmazonEBS",
+    "开发/后端/传统/数据存储/块存储/LinuxLVM",
+    "开发/后端/传统/数据存储/块存储/README.md",
+    "开发/后端/传统/数据存储/数据库/分布式数据库/README.md",
+    "开发/后端/传统/数据存储/数据库/分析型数据库/READMD.md",
+    "开发/后端/传统/数据存储/数据库/搜索引擎/README.md",
+    "开发/后端/传统/数据存储/数据库/时序数据库/README.md",
+    "开发/后端/传统/数据存储/数据库/向量数据库/README.md",
+    "开发/后端/传统/数据存储/数据库/向量数据库/Pgvector/常见向量数据库的对比.png",
+    "开发/后端/传统/数据存储/数据库/向量数据库/Pgvector/1简介.md",
+    "开发/后端/传统/数据存储/数据库/图数据库/README.md",
+    "开发/后端/传统/数据存储/数据库/宽列数据库/README.md",
+    "开发/后端/传统/数据存储/数据库/文档数据库/README.md",
+    "开发/后端/传统/数据存储/数据库/键值数据库/README.md",
+    "开发/后端/传统/数据存储/数据库/关系型数据库/README.md",
+    "开发/后端/传统/数据存储/数据库/关系型数据库/PostgreSQL/查询条件/WHERE.md",
+    "开发/后端/传统/数据存储/数据库/关系型数据库/PostgreSQL/查询条件/OR.md",
+    "开发/后端/传统/数据存储/数据库/关系型数据库/PostgreSQL/查询数据/ORDERBY.md",
+    "开发/后端/传统/数据存储/数据库/关系型数据库/PostgreSQL/数据选择/数据选择.md",
+    "开发/后端/传统/数据存储/数据库/关系型数据库/PostgreSQL/查询数据/SELECT.md",
+    "开发/后端/传统/数据存储/数据库/关系型数据库/PostgreSQL/pictures/安装7.png",
+    "开发/后端/传统/数据存储/数据库/关系型数据库/PostgreSQL/pictures/安装6.png",
+    "开发/后端/传统/数据存储/数据库/关系型数据库/PostgreSQL/pictures/安装5.png",
+    "开发/后端/传统/数据存储/数据库/关系型数据库/PostgreSQL/pictures/安装4.png",
+    "开发/后端/传统/数据存储/数据库/关系型数据库/PostgreSQL/pictures/安装3.png",
+    "开发/后端/传统/数据存储/数据库/关系型数据库/PostgreSQL/pictures/安装2.png",
+    "开发/后端/传统/数据存储/数据库/关系型数据库/PostgreSQL/pictures/安装1.png",
+    "开发/后端/传统/数据存储/数据库/关系型数据库/PostgreSQL/pictures/EDB下载地址.png",
+    "开发/后端/传统/数据存储/数据库/传统数据库/PostgreSQL/pictures/安装7.png"
   ]
 }

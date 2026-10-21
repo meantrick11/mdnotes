@@ -1,7 +1,5 @@
 # import 详解
 
-> **相关笔记**: [[../JavaScript/javaScript|JavaScript]] | [[../PHP/phplearn|PHP]] | [[../../网安/漏洞收集/框架漏洞/PYTHON/Django|Django]]
-
 ## import的作用
 
 python中的import语句用于导入其他模块，被导入的模块可以是内置模块、第三方模块(pip或者其他方式安装的模块)、自定义模块(自己编写的.py文件),但他们实质都是.py文件，所以也称为模块文件。
