@@ -1,0 +1,18 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "project-process-record",
+  "version": "0.1.0",
+  "description": "记录和回溯项目中的关键问题、证据、方案取舍、决策及后续结果。",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "项目过程与决策记录",
+        "shortDescription": "把关键问题、决策与结果连成可追溯的项目过程",
+        "longDescription": "为项目建立或维护问题与决策的过程记录，链接原始证据，区分当时记录与事后还原，并追踪后续验证。",
+        "developerName": "个人工作流",
+        "category": "Productivity",
+        "capabilities": ["项目过程记录", "问题与决策追踪"]
+      }
+    }
+  }
+}
