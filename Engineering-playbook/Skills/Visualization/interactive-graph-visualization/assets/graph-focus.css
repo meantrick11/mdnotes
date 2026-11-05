@@ -1,0 +1,25 @@
+/* 将以下类应用于 SVG 节点组与原始边；覆盖层不改变原图几何。 */
+[data-graph-node-id], path[data-graph-edge-id] { transition: opacity 200ms ease, filter 200ms ease; }
+.is-igv-dimmed { opacity: .15; }
+.is-igv-related { opacity: 1; }
+.is-igv-selected { filter: drop-shadow(0 0 8px rgba(65, 200, 220, .55)); }
+.is-igv-selected > rect { stroke: #41c8dc; }
+.igv-flow-overlay { pointer-events: none; }
+.igv-flow {
+  fill: none;
+  stroke: #41c8dc;
+  stroke-width: 2.7;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  opacity: .9;
+  filter: drop-shadow(0 0 3px rgba(65, 200, 220, .48));
+  animation: igv-travel 2s linear infinite;
+}
+@keyframes igv-travel {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: calc(-1 * var(--igv-period)); }
+}
+@media (prefers-reduced-motion: reduce), print {
+  .igv-flow-overlay { display: none; }
+  [data-graph-node-id], path[data-graph-edge-id] { transition: none; }
+}
