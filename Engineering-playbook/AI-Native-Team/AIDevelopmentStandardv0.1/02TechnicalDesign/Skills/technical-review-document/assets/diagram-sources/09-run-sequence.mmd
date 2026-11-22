@@ -1,0 +1,25 @@
+sequenceDiagram
+  autonumber
+  actor U as 任务管理员
+  participant C as 分类服务
+  participant J as sys_job / Quartz
+  participant F as 文件与元数据服务
+  participant K as 知识库 /category/match
+  participant R as 执行与结果表
+  U->>C: 立即执行或定时触发
+  C->>J: 检查任务和运行锁
+  C->>R: 创建 RUNNING 执行批次
+  C->>F: 获取数据源与压缩包
+  F-->>C: ZIP/RAR 文件引用
+  loop 解压后一层的每个条目
+    alt 支持的文件
+      C->>K: 提交文件类型与内容
+      K-->>C: Top3 或 parseStatus
+      C->>R: 写执行文件候选或失败
+    else 不支持的文件
+      C->>R: 写 SKIPPED 明细与原因
+    end
+  end
+  C->>R: 汇总批次终态和计数
+  U->>C: 查看历史并确认
+  C->>R: 生成证据快照并 upsert 正式结果

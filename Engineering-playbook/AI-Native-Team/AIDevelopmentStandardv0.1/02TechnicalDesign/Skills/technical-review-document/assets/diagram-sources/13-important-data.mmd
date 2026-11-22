@@ -1,0 +1,25 @@
+sequenceDiagram
+  autonumber
+  actor U as 目录使用者
+  participant UI as 重要数据页
+  participant C as 分类服务
+  participant R as 正式结果表
+  participant X as 33 列 Excel 模板
+  U->>UI: 进入页面，默认结构化 Tab
+  UI->>C: GET /vitalData/page
+  C-->>UI: 原结构化结果
+  U->>UI: 切换非结构化 Tab
+  UI->>C: importantDataPage + 模板/级别
+  C->>R: 只查已确认结果，级别按编码比较
+  R-->>UI: 33 列汇总，13 列有来源
+  U->>UI: 以当前条件导出
+  UI->>C: importantData/export + 同样筛选
+  C->>R: 全量查询同一范围
+  C->>X: 保留四行表头和合并单元格
+  alt 无结果
+    C-->>U: 仅表头文件
+  else 超过上限
+    C-->>U: 明确失败，不输出半截文件
+  else 正常
+    C-->>U: 从第五行写数据的 Excel
+  end

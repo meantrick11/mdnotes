@@ -1,0 +1,25 @@
+flowchart TB
+  U["业务用户"] --> FE["前端四个结构化/非结构化 Tab<br/>模板、任务、结果、重要数据"]
+  FE --> GW["fongwell-gateway / 权限体系"]
+  GW --> CLS
+  subgraph PLATFORM[数宝平台保留的服务组织]
+    CLS["fongwell-classification<br/>新链路：模板状态、任务、执行、候选、确认、结果"]
+    META["fongwell-metadata<br/>数据源和文件元数据"]
+    FILE["fongwell-file<br/>标准附件与压缩包"]
+    JOB["fongwell-job<br/>Quartz 调度"]
+    OTHER["其他业务服务保持原边界<br/>data-develop / datapipe / dataquality<br/>assets / approve / blockchain"]
+  end
+  CLS --> META
+  CLS --> FILE
+  CLS --> JOB
+  CLS -- "同步启用叶子" --> SYNC["POST /category/sync"]
+  CLS -- "逐文件只读匹配" --> MATCH["POST /category/match"]
+  subgraph KB[知识库目标能力]
+    SYNC --> PARSE["解析 / OCR / 切块 / embedding 组件"]
+    MATCH --> PARSE
+    PARSE --> VEC[("PostgreSQL pgvector<br/>category_vector")]
+  end
+  CLS --> MYSQL[("MySQL<br/>原模板表增量 + 非结构化状态/执行/结果表")]
+  FILE --> MINIO[("MinIO")]
+  CLS --> REDIS[("Redis 锁与缓存")]
+  GW --> OTHER

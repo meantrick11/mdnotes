@@ -174,13 +174,13 @@ Backend API
 
 列出与本次需求有关的模块及其代码位置。
 
-| 模块 / 服务 | 代码位置 | 当前职责 | 现有能力 |
-|---|---|---|---|
-| File | `src/modules/file/` | 文件上传与管理 | 支持 DOCX 上传 |
-| Parser | `src/modules/parser/` | 文件内容解析 | 支持 DOCX 解析 |
-| Task | `src/modules/task/` | 异步任务管理 | 支持任务创建和状态管理 |
-| AI | `src/modules/ai/` | AI 模型调用 | 支持文本生成 |
-| Note | `src/modules/note/` | 笔记管理 | 支持笔记生成和编辑 |
+| 模块 / 服务 | 代码位置                  | 当前职责    | 现有能力        |
+| ------- | --------------------- | ------- | ----------- |
+| File    | `src/modules/file/`   | 文件上传与管理 | 支持 DOCX 上传  |
+| Parser  | `src/modules/parser/` | 文件内容解析  | 支持 DOCX 解析  |
+| Task    | `src/modules/task/`   | 异步任务管理  | 支持任务创建和状态管理 |
+| AI      | `src/modules/ai/`     | AI 模型调用 | 支持文本生成      |
+| Note    | `src/modules/note/`   | 笔记管理    | 支持笔记生成和编辑   |
 
 填写说明：
 

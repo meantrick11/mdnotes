@@ -1,0 +1,17 @@
+stateDiagram-v2
+  [*] --> saved: 创建任务
+  saved --> paused: 模板或知识库未就绪
+  saved --> enabled: 执行门禁通过
+  paused --> enabled: 修复模板和数据源后启用
+  enabled --> running: 定时或立即执行
+  running --> succeeded: 全部文件处理完毕
+  running --> partial: 部分文件失败或跳过
+  running --> failed: 请求级错误或执行异常
+  succeeded --> enabled: 可再次运行
+  partial --> enabled: 修复后再次运行
+  failed --> enabled: 排障后再次运行
+  enabled --> paused: 手动暂停或模板失效
+  note right of paused
+    保存配置与可运行性分离
+    不建空的执行批次
+  end note

@@ -1,0 +1,41 @@
+erDiagram
+  CLASS_TEMPLATE ||--o{ CLASS_CLASSIFICATION_INFO : defines
+  CLASS_TEMPLATE ||--o{ CLASS_HIERARCHICAL_INFO : levels
+  CLASS_TEMPLATE ||--o{ CLASS_DATA_ITEM : standards
+  CLASS_CLASSIFICATION_INFO ||--o{ CLASS_DATA_ITEM : assigns_category
+  CLASS_HIERARCHICAL_INFO ||--o{ CLASS_DATA_ITEM : assigns_level
+  CLASS_TEMPLATE ||--o{ CLASS_MAPPING_TASK : selected_by
+  CLASS_MAPPING_TASK ||--o{ CLASS_DATA_DICTIONARY_TEMP : produces_candidate
+  CLASS_DATA_ITEM ||--o{ CLASS_DATA_DICTIONARY_TEMP : matched_as
+  CLASS_DATA_DICTIONARY_TEMP }o--o{ CLASS_DATA_DICTIONARY_MAPPING_RESULT : submits_to
+  CLASS_TEMPLATE {
+    bigint id PK
+  }
+  CLASS_CLASSIFICATION_INFO {
+    bigint id PK
+    bigint template_id
+  }
+  CLASS_HIERARCHICAL_INFO {
+    bigint id PK
+    bigint template_id
+  }
+  CLASS_DATA_ITEM {
+    bigint id PK
+    bigint template_id
+    bigint classification_id
+    bigint hierarchical_id
+  }
+  CLASS_MAPPING_TASK {
+    bigint id PK
+    bigint template_id
+  }
+  CLASS_DATA_DICTIONARY_TEMP {
+    bigint id PK
+    bigint to_job_id
+    string data_item_ids
+  }
+  CLASS_DATA_DICTIONARY_MAPPING_RESULT {
+    bigint id PK
+    bigint data_item_id
+    bigint template_id
+  }

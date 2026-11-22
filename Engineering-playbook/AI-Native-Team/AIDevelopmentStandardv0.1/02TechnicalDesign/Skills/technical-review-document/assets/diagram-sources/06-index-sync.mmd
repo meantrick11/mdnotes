@@ -1,0 +1,18 @@
+stateDiagram-v2
+  [*] --> none: 首次导入
+  none --> rebuilding: 管理员重建
+  ready --> stale: 末级名称/定义/举例变化
+  stale --> rebuilding: 再次重建
+  rebuilding --> ready: 启用叶子全部指纹一致
+  rebuilding --> stale: 部分失败或哈希不一致
+  ready --> disabled: 模板停用
+  stale --> disabled: 模板停用
+  disabled --> stale: 重新启用但内容未同步
+  disabled --> ready: 重新启用且索引仍一致
+  note right of ready
+    允许任务执行
+  end note
+  note right of stale
+    显示失败叶子与原因
+    阻断新执行
+  end note

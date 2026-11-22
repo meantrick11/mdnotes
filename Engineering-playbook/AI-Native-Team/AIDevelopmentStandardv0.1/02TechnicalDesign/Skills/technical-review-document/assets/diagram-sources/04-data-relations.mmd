@@ -1,0 +1,62 @@
+erDiagram
+  CLASS_TEMPLATE ||--o{ CLASS_CLASSIFICATION_INFO : defines
+  CLASS_TEMPLATE ||--o{ CLASS_HIERARCHICAL_INFO : levels
+  CLASS_TEMPLATE ||--|| UNSTRUCTURED_TEMPLATE_STATE : status
+  CLASS_CLASSIFICATION_INFO ||--o| UNSTRUCTURED_LEAF_STATE : index_state
+  CLASS_TEMPLATE ||--o{ UNSTRUCTURED_TASK : selected_by
+  SYS_JOB ||--o| UNSTRUCTURED_TASK : schedules
+  UNSTRUCTURED_TASK ||--o{ UNSTRUCTURED_EXEC : runs
+  UNSTRUCTURED_EXEC ||--o{ UNSTRUCTURED_EXEC_FILE : contains
+  UNSTRUCTURED_EXEC_FILE ||--o| UNSTRUCTURED_RESULT : confirmed_as
+  CLASS_CLASSIFICATION_INFO ||--o| CATEGORY_VECTOR : indexed_as
+  CLASS_TEMPLATE ||--o{ UNSTRUCTURED_RESULT : snapshot_from
+  CLASS_TEMPLATE {
+    bigint id PK
+    tinyint data_type "新增 1结构化 2非结构化"
+  }
+  CLASS_CLASSIFICATION_INFO {
+    bigint id PK
+    bigint template_id FK
+    tinyint is_leaf "新增"
+    string description "新增"
+    string sample_data "新增"
+    bigint safety_level_id "新增"
+  }
+  CLASS_HIERARCHICAL_INFO {
+    bigint id PK
+    bigint template_id FK
+  }
+  UNSTRUCTURED_TEMPLATE_STATE {
+    bigint template_id PK
+    string index_status
+  }
+  UNSTRUCTURED_LEAF_STATE {
+    bigint classification_id PK
+    string content_hash
+    string index_status
+  }
+  SYS_JOB {
+    bigint job_id PK
+  }
+  UNSTRUCTURED_TASK {
+    bigint job_id PK
+    bigint template_id FK
+  }
+  UNSTRUCTURED_EXEC {
+    bigint id PK
+    bigint job_id FK
+  }
+  UNSTRUCTURED_EXEC_FILE {
+    bigint id PK
+    bigint exec_id FK
+    string top3_snapshot
+  }
+  UNSTRUCTURED_RESULT {
+    bigint id PK
+    bigint last_exec_file_id FK
+    string evidence_snapshot
+  }
+  CATEGORY_VECTOR {
+    bigint classification_id FK
+    string indexed_hash
+  }

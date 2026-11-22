@@ -1,0 +1,32 @@
+sequenceDiagram
+  autonumber
+  participant J as Java 执行器
+  participant K as 知识库匹配 API
+  participant P as 解析 / OCR
+  participant E as Embedding
+  participant V as pgvector
+  J->>K: POST /category/match，真实 fileType
+  K->>K: 校验知识库、文件类型和大小
+  alt 请求级错误
+    K-->>J: HTTP 4xx/5xx
+  else 请求有效
+    alt 图片
+      K->>P: RapidOCR 提取文本
+    else Word 或 TXT
+      K->>P: 解析正文
+    end
+    P-->>K: 原始文本
+    K->>K: NFKC 归一化与切块
+    alt 无可用文本或解析失败
+      K-->>J: HTTP 200 + parseStatus 失败
+    else 有文本
+      K->>E: 与建库同模型批量向量化
+      E-->>K: 归一化向量
+      loop 每个切块
+        K->>V: 检索启用且 ready 的叶子
+        V-->>K: 分类 ID 与相似度
+      end
+      K->>K: 同分类取最高分并稳定排序
+      K-->>J: Top3 分类候选
+    end
+  end

@@ -1,0 +1,24 @@
+sequenceDiagram
+  autonumber
+  actor A as 模板管理员
+  participant UI as 数宝前端
+  participant C as 分类服务
+  participant F as 文件服务
+  participant D as MySQL
+  A->>UI: 下载并填写 12 列模板
+  UI->>UI: 解析 Excel，校验层级和级别
+  alt 行级错误
+    UI-->>A: 显示行号与原因
+  else 内容有效
+    UI->>F: 上传标准附件
+    F-->>UI: 文件 ID
+    UI->>C: 提交分类行、级别与文件 ID
+    C->>D: 保存模板、树、级别、叶子状态
+    C-->>UI: 返回模板 ID 与 indexStatus=none
+    A->>UI: 打开左树右叶子配置页
+    UI->>C: 查询 tree、leaves、levels
+    C-->>UI: 分类路径、定义、举例、级别和状态
+    A->>UI: 编辑叶子或切换启停
+    UI->>C: 保存变更
+    C->>D: 更新内容哈希并标记 stale
+  end

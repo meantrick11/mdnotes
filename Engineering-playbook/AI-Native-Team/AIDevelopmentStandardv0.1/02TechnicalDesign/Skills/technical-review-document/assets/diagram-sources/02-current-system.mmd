@@ -1,0 +1,28 @@
+flowchart TB
+  U["业务用户与前端"] --> GW["fongwell-gateway"]
+  GW --> AUTH["fongwell-auth / fongwell-system<br/>认证、角色和权限"]
+  GW --> CLS
+  GW --> DATA_BIZ
+  GW --> ASSET_BIZ
+  subgraph PLATFORM[数宝 1.2.5 业务服务]
+    CLS["fongwell-classification<br/>模板、规则、数据项、旧匹配任务与结果"]
+    META["fongwell-metadata<br/>数据源和文件元数据"]
+    FILE["fongwell-file<br/>文件上传与预览"]
+    JOB["fongwell-job<br/>任务调度"]
+    DATA_BIZ["数据服务<br/>data-develop / datapipe / dataquality"]
+    ASSET_BIZ["资产与流程服务<br/>assets / approve / blockchain"]
+  end
+  CLS -- "查询数据源与文件" --> META
+  CLS -- "附件与压缩包" --> FILE
+  CLS -- "任务注册与执行" --> JOB
+  CLS --> OLD["KnowledgeBaseClient<br/>数据项标准 add / get / match"]
+  OLD --> KB["现有知识库<br/>文档或数据项语义"]
+  CLS --> SQL[("MySQL<br/>class_template / class_data_item<br/>class_mapping_task / temp / mapping_result")]
+  META --> SQL
+  JOB --> QUARTZ["Quartz / sys_job"]
+  FILE --> MINIO[("MinIO / 文件存储")]
+  CLS --> REDIS[("Redis<br/>缓存与互斥")]
+  CONF["Nacos 配置与注册"] -.-> CLS
+  CONF -.-> META
+  CONF -.-> FILE
+  CONF -.-> JOB

@@ -1,0 +1,29 @@
+sequenceDiagram
+  autonumber
+  actor A as 模板管理员
+  actor B as 任务与确认人员
+  participant C as 数宝分类服务
+  participant K as 知识库
+  participant F as 文件与元数据
+  participant D as 业务库
+  A->>C: 导入 12 列分类标准及附件引用
+  C->>D: 保存模板、分类树、级别与叶子
+  A->>C: 启用模板并重建索引
+  C->>K: /category/sync 全量叶子对账
+  K-->>C: ready 或 stale 及失败叶子
+  C->>D: 回写索引状态
+  B->>C: 创建任务并绑定 ZIP/RAR 数据源
+  alt 模板或数据源未就绪
+    C-->>B: 保存暂停并提示 block_reason
+  else 具备运行条件
+    C->>D: 创建执行批次
+    C->>F: 下载压缩包并解压一层
+    loop 每个文件
+      C->>K: /category/match 文件内容
+      K-->>C: Top3 或文件级失败
+      C->>D: 保存执行文件明细
+    end
+    B->>C: 查看候选，确认或改选
+    C->>D: 保存证据快照与最新正式结果
+    C-->>B: 三层结果页与重要数据目录
+  end

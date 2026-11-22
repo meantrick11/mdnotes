@@ -1,0 +1,18 @@
+sequenceDiagram
+  autonumber
+  actor A as 模板管理员
+  participant C as 分类服务
+  participant DB as MySQL 状态表
+  participant KB as 知识库 category API
+  participant V as pgvector
+  A->>C: 导入 12 列标准
+  C->>DB: 保存模板、树、叶子和级别
+  C-->>A: 返回模板与索引 none
+  A->>C: 点击重建索引
+  C->>DB: 读取启用状态和 content_hash
+  C->>KB: POST /category/sync 全量叶子清单
+  KB->>V: 按分类 ID 新增、更新或删除向量
+  V-->>KB: 对账结果
+  KB-->>C: 每叶子 indexed_hash / ready / stale
+  C->>DB: 回写叶子及模板聚合状态
+  C-->>A: 显示 ready 或失败原因

@@ -4,6 +4,6 @@
 
 | 插件包 | 用途 | 状态 |
 | --- | --- | --- |
-| [project-process-record](project-process-record/skills/project-process-record/SKILL.md) | 记录和回溯关键问题、证据、方案取舍、决策及后续结果 | 初版 `0.1.0`；仅保存源码，尚未安装或发布 |
+| [project-process-record](Engineering-playbook/Skills/项目迭代/project-process-record/skills/project-process-record/SKILL.md) | 记录和回溯关键问题、证据、方案取舍、决策及后续结果 | 初版 `0.1.0`；仅保存源码，尚未安装或发布 |
 
 新增 Skill 时，以可独立触发的任务和明确产物划分；不同阶段若共用同一问题与决策记录方法，先复用同一个 Skill。需要单独安装到 Codex 时，再通过个人 Skill 目录或本地插件源启用，避免在多个项目中复制不同版本。

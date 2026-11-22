@@ -1,0 +1,19 @@
+sequenceDiagram
+  autonumber
+  actor U as 业务用户
+  participant UI as 正式结果页
+  participant C as 分类服务
+  participant R as class_unstructured_result
+  U->>UI: 进入非结构化结果 Tab
+  UI->>C: dataSourcePage
+  C->>R: 按已确认结果聚合数据源
+  R-->>UI: 数据源行、数量和筛选选项
+  U->>UI: 选中一个数据源
+  UI->>C: filePage + 文件名/分类/级别
+  C->>R: 查询该数据源已确认文件
+  R-->>UI: 文件行与当前范围选项
+  U->>UI: 打开文件详情
+  UI->>C: GET /unstructuredResult/{id}
+  C->>R: 读取确认时快照
+  R-->>UI: 定义、级别、确认人和执行溯源
+  Note over R: 模板或数据源后续变更不回写旧快照

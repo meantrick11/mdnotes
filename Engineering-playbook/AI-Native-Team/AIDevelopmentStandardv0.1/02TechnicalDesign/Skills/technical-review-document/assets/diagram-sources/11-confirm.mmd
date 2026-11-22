@@ -1,0 +1,25 @@
+sequenceDiagram
+  autonumber
+  actor U as 确认人员
+  participant UI as 候选详情页
+  participant C as 分类服务
+  participant T as 当前模板与叶子
+  participant R as 正式结果表
+  U->>UI: 查看执行文件
+  UI->>C: 查询文件、Top3 和完整依据
+  C-->>UI: 一次返回候选详情
+  alt 直接采纳 Top1
+    U->>UI: 点击确认分类
+  else 改选
+    U->>UI: 从同模板树选择末级
+  end
+  UI->>C: 提交 finalCategoryId 与备注
+  C->>T: 校验所属模板、末级与启用状态
+  alt 叶子已失效
+    C-->>UI: 提示重新选择
+  else 当前有效
+    C->>C: 生成确认时 evidence 快照
+    C->>R: 按文件稳定键 upsert 最新结论
+    R-->>C: 结果 ID
+    C-->>UI: 返回正式结果快照
+  end
